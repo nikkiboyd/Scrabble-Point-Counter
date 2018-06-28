@@ -8,22 +8,19 @@ namespace ScrabbleTests
     [TestClass]
     public class ScorePointsTests
     {
-        //[TestMethod]
-        //public void ScrabblePoints_ReturnsLetterWithValue_LetterAndValue()
-        //{
-        //    ScorePoints testScorePoints = new ScorePoints();
-
-        //    //if (dictionary.ContainsKey('a'))
-        //    //{
-        //    //int value = dictionary["apple"];
-        //    Assert.AreEqual("TEST", testScorePoints.ScrabblePoints());
-        //}
         [TestMethod]
-        public void BreakUpWord_SplitWordIntoCharArray_BrokenWord()
-        {
+        public void GrabValue_LoopArrayToGetValue_totalPoints()
+        {   
             string userInput = "dog";
             ScorePoints testScorePoints = new ScorePoints();
-            CollectionAssert.AreEqual(new char[] { 'd', 'o', 'g' }, testScorePoints.BreakUpWord(userInput));
+            CollectionAssert.AreEqual(new List<int> {2,1,2}, testScorePoints.GrabValues(userInput));
+        }
+        [TestMethod]
+        public void AddPoints_AddingPointsFromList_FinalPoints()
+        {
+            List<int> finalPoints = new List<int>{ 2, 1, 2 };
+            ScorePoints testScorePoints = new ScorePoints();
+            Assert.AreEqual(5, testScorePoints.AddPoints(finalPoints));
         }
     }
 }
