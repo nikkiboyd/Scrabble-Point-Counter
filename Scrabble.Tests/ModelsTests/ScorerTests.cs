@@ -1,14 +1,29 @@
+using System.Collections.Generic;
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Scrabble;
 
-namespace Scrabble.Tests
+namespace ScrabbleTests
 {
     [TestClass]
-    public class UnitTest1
+    public class ScorePointsTests
     {
+        //[TestMethod]
+        //public void ScrabblePoints_ReturnsLetterWithValue_LetterAndValue()
+        //{
+        //    ScorePoints testScorePoints = new ScorePoints();
+
+        //    //if (dictionary.ContainsKey('a'))
+        //    //{
+        //    //int value = dictionary["apple"];
+        //    Assert.AreEqual("TEST", testScorePoints.ScrabblePoints());
+        //}
         [TestMethod]
-        public void TestMethod1()
+        public void BreakUpWord_SplitWordIntoCharArray_BrokenWord()
         {
+            string userInput = "dog";
+            ScorePoints testScorePoints = new ScorePoints();
+            CollectionAssert.AreEqual(new char[] { 'd', 'o', 'g' }, testScorePoints.BreakUpWord(userInput));
         }
     }
 }
